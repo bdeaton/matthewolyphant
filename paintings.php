@@ -27,7 +27,7 @@
 							<a>. all paintings</a>
 						</li>
 						<li class="">
-							<a href="installations.html">. installations</a>
+							<a href="gallery.php?type=installations">. installations</a>
 						</li>
 					</ul>
 				</div>
@@ -53,7 +53,7 @@
 		<div class="nav nav-main">
 			<div class="nav-wrapper">
 				<ul>
-					<li class="first"><a href="paintings.html"><span>gallery</span></a></li>
+					<li class="first"><a href="gallery.php?type=paintings"><span>gallery</span></a></li>
 					<li class="separator"><i></i></li>
 					<li><a href="exhibits.html"><span>exhibits</span></a></li>
 					<li class="separator"><i></i></li>

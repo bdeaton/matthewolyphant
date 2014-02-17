@@ -3,12 +3,12 @@ $type = $_GET['type'];
 $paintingsMenuClass = 'selected';
 $installationsMenuClass = '';
 $paintingsAnchor = '<a>. all paintings</a>';
-$installationsAnchor = '<a href="installations.html">. installations</a>';
+$installationsAnchor = '<a href="gallery.php?type=installations">. installations</a>';
 
 if($type=='installations'){
 	$paintingsMenuClass = '';
 	$installationsMenuClass = 'selected';
-	$paintingsAnchor = '<a href="paintings.html">. all paintings</a>';
+	$paintingsAnchor = '<a href="gallery.php?type=paintings">. all paintings</a>';
 	$installationsAnchor = '<a>. installations</a>';
 }
 
@@ -70,7 +70,7 @@ if($type=='installations'){
 		<div class="nav nav-main">
 			<div class="nav-wrapper">
 				<ul>
-					<li class="first"><a href="paintings.html"><span>gallery</span></a></li>
+					<li class="first"><a href="gallery.php?type=paintings"><span>gallery</span></a></li>
 					<li class="separator"><i></i></li>
 					<li><a href="exhibits.html"><span>exhibits</span></a></li>
 					<li class="separator"><i></i></li>

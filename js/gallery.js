@@ -121,6 +121,7 @@ Matt.Gallery = {
 		},
 		
 		buildGalleryList: function(artType){
+			console.log('buildGalleryList: ' + artType);
 			var appDataUrl = 'https://fineart.firebaseio.com/app/imageData/'+artType;
 			var appDataRef = new Firebase(appDataUrl);
 			appDataRef.once('value', function(fbAppData) {
