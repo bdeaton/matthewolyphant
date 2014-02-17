@@ -94,6 +94,6 @@ FineArt.App = {
 	}	
 };
 $(function() {
-//	FineArt.App.init();
+	FineArt.App.init();
 });
 

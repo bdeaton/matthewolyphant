@@ -111,13 +111,46 @@ Matt.Gallery = {
     galleryView:{
 		init: function(){
 			console.log('Matt.Gallery.galleryView.init');
-			Matt.Gallery.galleryView.setupHandlers();
+			var artType = $('body').data('arttype');
+			if($('body').hasClass('test-html')){
+				Matt.Gallery.galleryView.setupHandlers();
+			}
+			else{
+				Matt.Gallery.galleryView.buildGalleryList(artType);
+			}
 		},
+		
+		buildGalleryList: function(artType){
+			var appDataUrl = 'https://fineart.firebaseio.com/app/imageData/'+artType;
+			var appDataRef = new Firebase(appDataUrl);
+			appDataRef.once('value', function(fbAppData) {
+				var appData = fbAppData.val();
+				var listHtml = '';
+				fbAppData.child('items').forEach(function(childSnapshot) {
+					var name = childSnapshot.name();
+					var childData = childSnapshot.val();
+					listHtml += Matt.Gallery.galleryView.buildGalleryItemHtml(name, artType, childData);
+				});
+				$('.gallery-main ul').html(listHtml);
+				Matt.Gallery.galleryView.setupHandlers();
+			});
+		},
+		
+		buildGalleryItemHtml: function(index,type,data){
+			var source = $('#template-gallery-item').html();
+			var template = Handlebars.compile(source);
+			var title = data.title;
+			title = title.replace('&#34;','"').replace('&#34;','"');
+			var context = {index: index, imgUrl:data.url, width:data.width, height:data.height, orientation:data.orientation, title:title,type:type}
+			var html = template(context);
+			return html;
+		},
+		
 		setupHandlers: function(){
 			console.log('Matt.Gallery.galleryView.setupHandlers');
 			$('.gallery-main a').on('click',function(){
 				Matt.Gallery.galleryView.handleClickThumbnail($(this));
-				return false;	
+				return false;
 			});
 			Matt.Gallery.galleryView.setupPagination();
 		},
