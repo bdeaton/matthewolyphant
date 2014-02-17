@@ -1,0 +1,7 @@
+{
+	"config":{
+		"paintings":{
+			"maxItems":1000
+		}
+	}
+}
