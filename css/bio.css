@@ -1,0 +1,58 @@
+.content{
+	width:960px;
+}
+	.main{
+		overflow:hidden;
+	}
+		.content-primary{
+			float:left;
+			color:#7f754d;
+			font-family:arial;
+			font-size:16px;
+		}
+				.content-primary h3{
+					font-weight:bold;
+					font-style:italic;
+					margin-bottom:15px;
+					font-size:18px;
+				}
+				.content-primary h4{
+					font-weight:bold;
+					text-decoration:underline;
+					font-size:16px;
+				}
+				.content-primary h5{
+				}
+				.content-primary p{
+					margin-bottom:10px;
+				}
+				.content-primary a{
+					color:#cb801e;
+					font-style:italic;
+				}
+		body.page-events .main .content-secondary{
+			width:640px;
+			float:left;
+			overflow:hidden;
+		}
+		
+
+		
+.imagery{
+	clear:both;
+	margin:10px 0;
+	float:left;
+}
+	.imagery span{
+		margin:5px 0 10px;
+		text-align:center;
+		display:block;
+	}
+	
+	
+.v2 .imagery{
+	margin:0 0 10px;
+}
+	.v2 .imagery span{
+		
+	}

@@ -1,0 +1,113 @@
+.content{
+	width:960px;
+}
+	.main{
+		overflow:hidden;
+	}
+		.content-primary{
+			float:left;
+			color:#7f754d;
+			font-family:arial;
+			font-size:16px;
+		}
+				.content-primary h3{
+					font-weight:bold;
+					font-style:italic;
+					margin-bottom:15px;
+					font-size:18px;
+				}
+				.content-primary h4{
+					font-weight:bold;
+					text-decoration:underline;
+					font-size:16px;
+				}
+				.content-primary h5{
+				}
+				.content-primary p{
+					margin-bottom:10px;
+				}
+				.content-primary a{
+					color:#cb801e;
+					font-style:italic;
+				}
+		body.page-events .main .content-secondary{
+			width:640px;
+			float:left;
+			overflow:hidden;
+		}
+		
+
+		
+.imagery{
+	clear:both;
+	margin:10px 0;
+	float:left;
+}
+	.imagery span{
+		margin:5px 0 10px;
+		text-align:center;
+		display:block;
+	}
+	
+	
+.v2 .imagery{
+	margin:0 0 10px;
+}
+	.v2 .imagery span{
+		
+	}
+	
+	
+	
+				.content{
+					width:640px;
+				}
+				.content-primary{
+					width: 100%;
+					overflow:hidden;
+				}
+				.col1{
+					width:315px;
+					float:left;
+				}
+					form.contact{
+					}
+						.indicator-required{
+							font-size:smaller;
+							float:right;
+							margin-bottom:3px;
+						}
+						.fieldset{
+							overflow:hidden;
+							margin-bottom:10px;
+							width:315px;
+						}
+							.fieldset label{
+								width:60px;
+								display:block;
+								float:left;
+							}
+							.fieldset input{
+								width:245px;
+								display:block;
+								float:right;
+							}
+							.fieldset textarea{
+								width:313px;
+								height:100px;
+							}
+							.btn-submit{
+								float:right;
+								padding:3px 6px;
+								border-radius:3px;
+								background:#eee;
+								border:1px solid #7F754D;
+								color:#7F754D;
+							}
+				.imagery-contact{
+					width:290px;
+					float:right;
+					clear:none;
+					margin:0;
+				}
+

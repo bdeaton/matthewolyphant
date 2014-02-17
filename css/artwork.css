@@ -1,0 +1,191 @@
+/*SPRITES BEGIN*/
+
+/*SPRITES END*/
+.main{
+	overflow:hidden;
+	position:relative;
+}
+	.gallery-main{
+		float:left;
+		padding-bottom:50px;
+		outline1:1px solid red;
+	}
+		.gallery-main ul{
+			overflow:hidden;
+		}
+			.gallery-main ul li{
+				width:200px;
+				height:200px;
+				overflow:hidden;
+				float:left;
+				margin-left:14px;
+				margin-top:14px;
+				background1:yellow;
+			}
+			.gallery-main ul li.first{
+				clear:both;
+				margin-left:0;
+			}
+			.gallery-main ul li.row-1{
+				margin-top:0;
+			}
+				.gallery-main ul li img{
+					float:left;
+				}
+		
+	.gallery-menu{
+		width:211px;
+		outline1:1px solid green;
+		margin-top:280px;
+		position:absolute;
+		bottom:0;
+		right:0;
+		
+		background1:pink;
+		
+	}
+		.gallery-sections{
+			display:block;
+			height:190px;
+			width:100%;
+			position:absolute;
+			bottom:233px;
+			right:0;
+			
+			background1:purple;
+			outline1:1px solid yellow;
+		}
+			.gallery-sections ul.list-menu{
+				outline1:1px solid #0f0;
+				clear:both;
+				margin-bottom:3px;
+			}
+			.gallery-sections ul.list-menu.menu-opened{
+				margin-bottom:10px;
+			}
+				.gallery-sections ul li{
+					text-align:right;
+					color:#9d9883;
+					font-size:17px;
+					line-height:17px;
+					display:none;
+				}
+				.gallery-sections ul li.title{
+					text-align:right;
+					font-size:18px;
+					line-height:17px;
+					text-transform:uppercase;
+					margin-bottom:1px;
+					display:block;
+				}
+				.gallery-sections ul.menu-opened li{
+					display:block;
+				}
+					.gallery-sections ul li a{
+						text-decoration:none;
+					}
+					.gallery-sections ul li.selected a{
+						color:#0B0A09;
+						text-decoration:underline;
+					}
+					.gallery-sections ul li a:hover,
+					.gallery-sections ul li a.hover{
+						text-decoration:underline;
+					}
+					
+		.list-menu-tags{
+			display:block;
+			height:125px;
+			overflow:hidden;
+			position:absolute;
+			bottom:33px;
+			left:0;
+			text-align: right;
+			color: #9D9883;
+			
+			background1:orange;
+			outline1:1px solid purple;
+		}
+			.list-menu-tags span{
+				font-weight:bold;
+			}
+			.list-menu-tags a{
+				text-decoration:none;
+			}
+			.list-menu-tags a.size-0{
+				font-size:10px;
+			}
+			.list-menu-tags a.size-1{
+				font-size:11px;
+			}
+			.list-menu-tags a.size-2{
+				font-size:12px;
+			}
+			.list-menu-tags a.size-3{
+				font-size:13px;
+			}
+			.list-menu-tags a.size-4{
+				font-size:14px;
+			}
+			.list-menu-tags a.size-5{
+				font-size:15px;
+			}
+			.list-menu-tags a.size-6{
+				font-size:16px;
+			}
+			.list-menu-tags a.size-7{
+				font-size:17px;
+			}
+			.list-menu-tags a.size-8{
+				font-size:18px;
+			}
+			.list-menu-tags a.size-9{
+				font-size:19px;
+			}
+			.list-menu-tags a.size-10{
+				font-size:20px;
+			}
+			
+			.list-menu-tags a:hover,
+			.list-menu-tags a.hover{
+				text-decoration:underline;
+			}
+	
+		.pagination-gallery{
+			width:44px;
+			float:left;
+			clear:both;
+			position:absolute;
+			bottom:0;
+			left:0;
+			overflow:hidden;
+			
+			outline1:1px solid blue;
+		}
+			.pagination-gallery li{
+				float:left;
+			}
+			.pagination-gallery li.previous{
+				
+			}
+				.pagination-gallery li a{
+					background:transparent url(../img/galleries/sprite-btn-gallery-pagination.png) no-repeat 0 0;
+					display:block;
+					width:13px;
+					height:13px;
+				}
+				.pagination-gallery li.previous a{
+					margin-right:17px;
+				}
+				.pagination-gallery li.previous a:hover,
+				.pagination-gallery li.previous a.hover{
+					background-position:0 -13px;
+				}
+				.pagination-gallery li.next a{
+					background-position:-13px 0;
+				}
+				.pagination-gallery li.next a:hover,
+				.pagination-gallery li.next a.hover{
+					background-position:-13px -13px;
+				}
+
