@@ -116,25 +116,54 @@ Matt.Gallery = {
 				Matt.Gallery.galleryView.setupHandlers();
 			}
 			else{
-				Matt.Gallery.galleryView.buildGalleryList(artType);
+				Matt.Gallery.galleryView.getGalleryData(artType);
 			}
+		},
+		
+		getGalleryData: function(artType){
+			console.log('getGalleryData: ' + artType);
+			AppData = window.AppData || {};
+			AppData.GalleryData = AppData.GalleryData || {};
+
+
+			var appDataUrl = 'https://fineart.firebaseio.com/app/imageData/'+artType;
+			var appDataRef = new Firebase(appDataUrl);
+
+
+			appDataRef.once('value', function(fbAppData) {
+				AppData.GalleryData[artType] = fbAppData.val();
+				Matt.Gallery.galleryView.buildGalleryDataObject(artType);
+			});
+		},
+		
+		buildGalleryDataObject: function(artType){
+			console.log('buildGalleryDataObject: ' + artType);
+			AppData.GalleryData[artType].buildList = {};
+//			AppData.GalleryData[artType].buildList = AppData.GalleryData[artType].items;
+			
+			$.each(AppData.GalleryData[artType].items,function(index,value){
+				var index = index;
+				console.log(value);
+				var childData = value;
+				AppData.GalleryData[artType].buildList[index] = value;
+			});
+			
+			
+			Matt.Gallery.galleryView.buildGalleryList(artType);
 		},
 		
 		buildGalleryList: function(artType){
 			console.log('buildGalleryList: ' + artType);
-			var appDataUrl = 'https://fineart.firebaseio.com/app/imageData/'+artType;
-			var appDataRef = new Firebase(appDataUrl);
-			appDataRef.once('value', function(fbAppData) {
-				var appData = fbAppData.val();
-				var listHtml = '';
-				fbAppData.child('items').forEach(function(childSnapshot) {
-					var name = childSnapshot.name();
-					var childData = childSnapshot.val();
-					listHtml += Matt.Gallery.galleryView.buildGalleryItemHtml(name, artType, childData);
-				});
-				$('.gallery-main ul').html(listHtml);
-				Matt.Gallery.galleryView.setupHandlers();
-			});
+			var listHtml = '';
+			$.each(AppData.GalleryData[artType].buildList,function(index,value){
+				var index = value.sort;
+				var childData = value;
+				listHtml += Matt.Gallery.galleryView.buildGalleryItemHtml(index, artType, childData);
+			});			
+			
+			
+			$('.gallery-main ul').html(listHtml);
+			Matt.Gallery.galleryView.setupHandlers();
 		},
 		
 		buildGalleryItemHtml: function(index,type,data){
